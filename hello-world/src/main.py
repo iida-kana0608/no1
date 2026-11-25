@@ -31,12 +31,18 @@ def main(page: ft.Page):
             expand=True,
             #パーツをまとめるオブジェクト
             content=ft.Container(
-                #content=counter
-                content=counter,
+                content=ft.Column(
+                    controls=[hello_world, counter],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                ),
                 alignment=ft.Alignment.CENTER,
             ),
         ),
-        ft.FloatingActionButton(icon=ft.Icons.REMOVE, key="decrement", on_click=decrement_click),
+        ft.FloatingActionButton(
+            icon=ft.Icons.REMOVE,
+            key="decrement",
+            on_click=decrement_click,
+        ),
     )
 
 if __name__ == "__main__":
